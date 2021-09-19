@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <div style="width: 70%;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </center>
+
+    <script>
+
+        let myChart = document.getElementById('myChart').getContext('2d')
+
+
+        let deptWiseCountChart = new Chart(myChart, {
+            type: 'bar', // bar, pie, doughnut, line, radar, polarArea, 
+            data: {
+                labels: ['A', 'B', 'C', 'D', 'E', 'F'],
+                datasets: [{
+                    label: 'Count',
+                    data: [35, 20, 30, 10, 45, 25],
+                    backgroundColor: ['red', 'green', 'purple', 'pink', 'blue', 'magenta'],
+                    borderWidth: 1,
+                    borderColor: 'gray',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: 'black'
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Department Wise Count for Chart.Js Workshop',
+                        color: 'black',
+                        font: {
+                            size: 25,
+                        },
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            fontColor: '#000'
+                        }
+                    },
+                    tooltips: {
+                        enabled: false,
+                    }
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
